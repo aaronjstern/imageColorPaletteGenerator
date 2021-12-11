@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <link rel="stylesheet" href="{{url_for('static', filename='styles.css')}}">
+</head>
+<body>
+    <div>
+		<img src="{{ url_for('display_image', filename=filename) }}">
+	</div>
+    <h1>The top 10 colors in your image are</h1>
+    <ol>
+        {% for rgb in top_10 %}
+        <li>
+            rgb{{rgb}}
+        </li>
+        {% endfor %}
+    </ol>
+
+</body>
+</html>
